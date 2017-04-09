@@ -384,8 +384,10 @@ def main(*, imageSize=32, dirs='.', batchSize=128,
             j += 1
 
         # do checkpointing
-        torch.save(netG.state_dict(), '%s/netG_epoch_%d.pth' % (outf, epoch))
-        torch.save(netD.state_dict(), '%s/netD_epoch_%d.pth' % (outf, epoch))
+        torch.save(netG.state_dict(), '%s/netG.pth' % (outf))
+        torch.save(netD.state_dict(), '%s/netD.pth' % (outf))
+        torch.save(netE_G.state_dict(), '%s/netE_G.pth' % (outf))
+        torch.save(netE_D.state_dict(), '%s/netE_D.pth' % (outf))
 
 if __name__ == '__main__':
     run(main)
